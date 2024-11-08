@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdinc <mdinc@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 13:35:31 by mdinc             #+#    #+#             */
-/*   Updated: 2024/11/08 13:35:31 by mdinc            ###   ########.fr       */
+/*   Created: 2024/11/08 14:17:23 by mdinc             #+#    #+#             */
+/*   Updated: 2024/11/08 14:17:23 by mdinc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*tmp_ptr;
+	size_t	i;
+	char	*result;
 
-	tmp_ptr = (unsigned char *)b;
-	while (len > 0)
-	{
-		*(tmp_ptr++) = (unsigned char)c;
-		len--;
-	}
-	return (b);
+	i = len;
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s) || len == 0)
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		i = ft_strlen(s + start);
+	result = (char *)malloc(sizeof(char) * (i + 1));
+	if (!result)
+		return (NULL);
+	ft_strlcpy(result, s + start, i + 1);
+	return (result);
 }
