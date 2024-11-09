@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <sys/_types/_null.h>
 
 static int	d_count(int nbr)
 {

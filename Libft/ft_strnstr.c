@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include <sys/_types/_size_t.h>
+#include <sys/_types/_null.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
