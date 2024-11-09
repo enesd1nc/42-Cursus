@@ -12,11 +12,17 @@
 
 #include <sys/_types/_size_t.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (!dst && !src)
-		return (0);
-	while (n--)
-		((char *)dst)[n] = ((char *)src)[n];
-	return (dst);
+	size_t	i;
+
+	i = 0;
+	if (dest == src)
+		return (dest);
+	while (i < n)
+	{
+		*((unsigned char *)dest + i) = *((unsigned char *)src + i);
+		i++;
+	}
+	return (dest);
 }
