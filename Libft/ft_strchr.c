@@ -10,13 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <sys/_types/_null.h>
+
 char	*ft_strchr(const char *s, int c)
 {
-	while ((char)c != *s)
+	while (*s != '\0')
 	{
-		if (!*s)
-			return (0);
+		if (*s == (char)c)
+			return ((char *)s);
 		s++;
 	}
-	return ((char *)s);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
