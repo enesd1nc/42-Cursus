@@ -6,7 +6,7 @@
 /*   By: mdinc <mdinc@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 10:29:34 by mdinc             #+#    #+#             */
-/*   Updated: 2024/12/05 10:29:34 by mdinc            ###   ########.fr       */
+/*   Updated: 2024/12/06 14:01:23 by mdinc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		total_len;
 
+	if (!format)
+		return (-1);
 	total_len = 0;
 	va_start(args, format);
 	total_len = ft_format(&args, format);

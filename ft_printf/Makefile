@@ -9,7 +9,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		ar rcs $(NAME) $(OBJ)
+		ar rcs $(NAME) $?
 
 %.o : %.c
 		$(CC) -c $(CFLAGS) $< -o $@
